@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8780
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: order
+      #url: http://www.ityouknow.com/
+
+    api-b:
+      path: /api-b/**
+      serviceId: feign
+      #url: https://blog.csdn.net
